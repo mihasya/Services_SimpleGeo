@@ -98,12 +98,13 @@ class Services_SimpleGeo
      * @return void
      * @see HTTP_OAuth_Consumer
      */
-    public function __construct($token, $secret, $version = '0.1')
+    public function __construct($token, $secret, $version = '0.1', $host = 'api.simplegeo.com')
     {
         $this->_oauth   = new HTTP_OAuth_Consumer($token, $secret);
         $this->_version = $version;
         $this->_token   = $token;
         $this->_secret  = $secret;
+        $this->_api = "http://{$host}";
     }
 
     /**
